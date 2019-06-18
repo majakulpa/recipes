@@ -1,0 +1,115 @@
+.main {
+  background-image: url("../img/food.jpeg");
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  grid-column: margin-left-start / margin-right-end;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-row-gap: 2rem;
+  padding-left: 6rem;
+  font-family: $font-header;
+  color: $color-light;
+
+  @media only screen and (max-width: $bp-large) {
+    background-image: url("../img/food1.jpeg");
+    background-position: center;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding-left: 3rem;
+    grid-row-gap: 1rem;
+  }
+
+  &__header {
+    font-size: 10rem;
+    grid-column: 1 / span 4;
+    grid-row: 3 / span 1;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    text-shadow: $shadow;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 8rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 6rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 5rem;
+    }
+  }
+
+  &__header--small {
+    font-size: 6rem;
+    grid-column: 1 / span 3;
+    grid-row: 4 / span 1;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    text-shadow: $shadow;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 4rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    cursor: pointer;
+    font-size: 3rem;
+    color: $color-light;
+    border: 1px solid $color-light;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    height: 6.5rem;
+    text-shadow: $shadow;
+    box-shadow: $shadow;
+
+    @media only screen and (max-width: $bp-big) {
+      width: 25rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      width: 20rem;
+      height: 4.5rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      width: 15rem;
+      height: 3.5rem;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $color-light;
+      color: $color-grey-dark;
+      transform: translateY(-0.2rem) scale(1.1);
+    }
+  }
+}

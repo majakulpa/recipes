@@ -1,0 +1,114 @@
+.navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 6rem;
+  background: $color-grey-dark;
+  z-index: 1000;
+
+  .links {
+    float: right;
+    margin-right: 2rem;
+    position: relative;
+
+    li {
+      float: left;
+      list-style: none;
+      position: relative;
+      margin: 1rem;
+      display: inline-block;
+      font-size: 2.5rem;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: 1.8rem;
+      }
+
+      & > a {
+        font-size: 2rem;
+        position: relative;
+        display: inline-block;
+        padding: 0 1rem;
+        line-height: 4rem;
+        height: 4rem;
+        width: 15rem;
+        text-decoration: none;
+        color: $color-light;
+
+        @media only screen and (max-width: $bp-small) {
+          width: 8rem;
+          font-size: 1.4rem;
+          line-height: 1.5rem;
+          height: 2.5rem;
+        }
+
+        &:hover {
+          color: $color-grey-dark;
+          background: $color-light;
+          border-radius: 2px;
+        }
+      }
+
+      ul {
+        position: absolute;
+        left: 0;
+        //top:40px;
+        margin: 0;
+        background: $color-grey;
+        border-radius: 2px;
+        box-shadow: $shadow-light;
+        display: none;
+
+        > li {
+          clear: both;
+          list-style: none;
+          display: block;
+          padding: 0 1rem;
+          margin: 0;
+          width: 100%;
+
+          &:hover {
+            background-color: $color-grey-dark;
+            > a {
+              background-color: $color-grey-dark;
+              color: $color-light;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        > .drop {
+          display: block;
+          animation: fadeInRight 0.3s ease;
+          -webkit-animation: fadeInRight 0.3s ease;
+
+          > :first-child {
+            animation: fadeInRight 0.3s ease;
+            -webkit-animation: fadeInRight 0.3s ease;
+          }
+
+          > :nth-child(2) {
+            animation: fadeInRight 0.5s ease;
+            -webkit-animation: fadeInRight 0.5s ease;
+          }
+
+          > :nth-child(3) {
+            animation: fadeInRight 0.7s ease;
+            -webkit-animation: fadeInRight 0.7s ease;
+          }
+
+          > :nth-child(4) {
+            animation: fadeInRight 0.9s ease;
+            -webkit-animation: fadeInRight 0.9s ease;
+          }
+
+          > :last-child {
+            animation: fadeInRight 1.1s ease;
+            -webkit-animation: fadeInRight 1.1s ease;
+          }
+        }
+      }
+    }
+  }
+}

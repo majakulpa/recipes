@@ -1,0 +1,113 @@
+$font-header: "Lobster", cursive;
+$color-light: rgb(244, 242, 242);
+$font-primary: "Exo", sans-serif;
+$color-grey-dark: #333;
+$color-grey-light: #ddd;
+$color-grey: rgb(114, 114, 114);
+$shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5);
+$shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.15);
+
+//responsive breakpoints
+//2300px, 2300/16(defauls font size)
+$bp-largest: 143.75em;
+//1500px;
+$bp-large: 93.75em;
+//1200px;
+$bp-big: 75em;
+//900px;
+$bp-medium: 56.25em;
+//700px
+$bp-small: 43.75em;
+//500px
+$bp-smallest: 31.25em;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem = 10px
+
+  @media only screen and (min-width: $bp-largest) {
+    font-size: 100%; //1rem is now 16px
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%; //1rem is now 8px
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark;
+  font-weight: 300;
+  line-height: 1.6;
+  background-color: $color-light;
+}
+
+.body-main {
+  display: grid;
+  grid-template-columns:
+    [margin-left-start] 10rem [margin-left-end] repeat(3, 1fr)
+    [margin-right-start] 10rem [margin-right-end];
+
+  @media only screen and (max-width: $bp-big) {
+    grid-template-columns:
+      [margin-left-start] 3rem [margin-left-end] repeat(3, 1fr)
+      [margin-right-start] 3rem [margin-right-end];
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}

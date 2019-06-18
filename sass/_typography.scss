@@ -1,0 +1,64 @@
+.medium-header {
+  font-family: $font-header;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+.medium-header-rec {
+  margin-top: 5rem;
+}
+
+h3 {
+  font-family: $font-header;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bigtext {
+  grid-column: margin-left-end / margin-right-start;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-column-gap: 1.5rem;
+  align-items: center;
+  margin-top: 20rem;
+
+  @media only screen and (max-width: $bp-small) {
+    margin-top: 10rem;
+  }
+
+  &::before,
+  &::after {
+    //always have to define content property
+    content: "";
+    height: 1px;
+    display: block;
+    background-color: currentColor;
+  }
+}
+
+.src-link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: $color-grey-dark;
+}
+
+.link-btn {
+  font-size: 2rem;
+  padding: 0.8rem 2rem;
+  border: 1px solid $color-grey-dark;
+  border-radius: 4px;
+  width: 20rem;
+  height: 5rem;
+  text-decoration: none;
+  color: $color-grey-dark;
+
+  &:hover {
+    background-color: $color-grey-dark;
+    color: $color-light;
+    animation: pulsate 1s infinite;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
